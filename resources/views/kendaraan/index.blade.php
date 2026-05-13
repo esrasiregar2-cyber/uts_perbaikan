@@ -1,7 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="mb-4">
+    <h2 class="fw-bold text-primary">
+        Data Servis Kendaraan
+    </h2>
 
+    <p class="text-muted">
+        Sistem Informasi E-Bengkel
+    </p>
+</div>
 <h3>Daftar Servis Kendaraan</h3>
 
 <a href="/kendaraan/create" class="btn btn-primary mb-3">
