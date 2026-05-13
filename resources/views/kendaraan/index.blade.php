@@ -15,6 +15,7 @@
         <th>Nama Pemilik</th>
         <th>Merk Kendaraan</th>
         <th>Keluhan</th>
+        <th>Aksi</th>
     </tr>
 
     @foreach($kendaraans as $item)
@@ -24,6 +25,24 @@
         <td>{{ $item->nama_pemilik }}</td>
         <td>{{ $item->merk_kendaraan }}</td>
         <td>{{ $item->keluhan }}</td>
+        <td>
+    <a href="/kendaraan/{{ $item->id }}/edit"
+        class="btn btn-warning btn-sm">
+        Edit
+    </a>
+
+    <form action="/kendaraan/{{ $item->id }}"
+        method="POST"
+        style="display:inline;">
+
+        @csrf
+        @method('DELETE')
+
+        <button class="btn btn-danger btn-sm">
+            Hapus
+        </button>
+    </form>
+</td>
     </tr>
     @endforeach
 
